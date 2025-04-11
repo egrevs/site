@@ -1,0 +1,397 @@
+.portfolio {
+
+}
+
+header {
+    max-width: 100%;
+    padding: 20px 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+}
+
+header li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+header li:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header ul {
+        gap: 20px;
+    }
+
+    header li {
+        font-size: 14px;
+    }
+}
+
+section:first-of-type {
+    padding: 120px 60px 60px;
+    display: flex;
+    gap: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+
+section:first-of-type img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+section:first-of-type div {
+    width: 60%;
+}
+
+section:first-of-type h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+    font-weight: 300;
+}
+
+section:first-of-type hr {
+    border: none;
+    height: 1px;
+    background-color: #000;
+    margin: 20px 0;
+}
+
+section:first-of-type p:first-of-type {
+    font-size: 24px;
+    margin: 0 0 40px;
+    font-weight: 300;
+}
+
+/*section:first-of-type p:last-of-type {*/
+/*    font-size: 16px;*/
+/*    line-height: 1.6;*/
+/*    margin: 0;*/
+/*    font-weight: 300;*/
+/*}*/
+
+@media (max-width: 1024px) {
+    section:first-of-type {
+        padding: 100px 40px 40px;
+        gap: 40px;
+    }
+
+    section:first-of-type h1 {
+        font-size: 36px;
+    }
+
+    section:first-of-type p:first-of-type {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    section:first-of-type {
+        flex-direction: column;
+        padding: 80px 20px 30px;
+    }
+
+    section:first-of-type img {
+        width: 100%;
+    }
+
+    section:first-of-type div {
+        width: 100%;
+    }
+
+    section:first-of-type h1 {
+        font-size: 32px;
+    }
+
+    section:first-of-type p:first-of-type {
+        font-size: 18px;
+        margin: 0 0 30px;
+    }
+}
+
+section:nth-of-type(2) {
+    padding: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+section:nth-of-type(2) hr {
+    border: none;
+    height: 1px;
+    background-color: #000;
+    margin: 30px 0;
+    width: 100%;
+}
+
+section:nth-of-type(2) h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0;
+}
+
+section:nth-of-type(2) > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+section:nth-of-type(2) span {
+    font-size: 48px;
+    font-weight: 200;
+    color: #888;
+    margin-bottom: 20px;
+    display: block;
+}
+
+section:nth-of-type(2) h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+section:nth-of-type(2) p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    section:nth-of-type(2) {
+        padding: 40px;
+    }
+
+    section:nth-of-type(2) > div {
+        gap: 30px;
+    }
+
+    section:nth-of-type(2) h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    section:nth-of-type(2) {
+        padding: 30px 20px;
+    }
+
+    section:nth-of-type(2) > div {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    section:nth-of-type(2) h2 {
+        font-size: 28px;
+    }
+
+    section:nth-of-type(2) span {
+        font-size: 36px;
+    }
+
+    section:nth-of-type(2) h3 {
+        font-size: 20px;
+    }
+}
+.portfolio-carousel {
+    padding: 40px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel-item {
+    padding: 0 10px;
+}
+
+.carousel-image-container {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.carousel-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section:nth-of-type(4) {
+    padding: 80px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+}
+
+section:nth-of-type(4) .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+section:nth-of-type(4) .service-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section:nth-of-type(4) h2 {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0;
+}
+
+section:nth-of-type(4) h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+section:nth-of-type(4) p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+section:nth-of-type(4) .price {
+    font-size: 20px;
+    color: #000;
+    margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    section:nth-of-type(4) {
+        padding: 60px 40px;
+        gap: 40px;
+    }
+
+    section:nth-of-type(4) .services {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    section:nth-of-type(4) {
+        padding: 40px 20px;
+    }
+
+    section:nth-of-type(4) .services {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    section:nth-of-type(4) h2 {
+        font-size: 28px;
+    }
+
+    section:nth-of-type(4) h3 {
+        font-size: 20px;
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #666;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.input-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 12px 30px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.submit-button:hover {
+    background: #333;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 0 20px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
+
