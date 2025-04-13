@@ -8,6 +8,7 @@
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f9f9f9;
   --color-bg-accent: rgba(255, 255, 255, 0.9);
+  --color-input-bg: #ffffff;
   
   /* Text colors */
   --color-text-primary: #000000;
@@ -37,6 +38,7 @@
     --color-bg-primary: #ffffff;
     --color-bg-secondary: #f9f9f9;
     --color-bg-accent: rgba(255, 255, 255, 0.9);
+    --color-input-bg: #ffffff;
 
     /* Text colors */
     --color-text-primary: #000000;
