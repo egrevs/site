@@ -29,7 +29,7 @@ export const Portfolio = () => {
     ];
 
     return (
-        <section className="portfolio">
+        <section className="portfolio" id="portfolio">
             <ProjectCarousel images={projectSet1} />
             <ProjectCarousel images={projectSet2} />
             <ProjectCarousel images={projectSet3} />

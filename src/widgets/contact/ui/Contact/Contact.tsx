@@ -2,7 +2,7 @@ import '../../../../app/styles/Contact.css';
 
 export const Contact = () => {
     return (
-        <section className="contact">
+        <section className="contact" id="contact">
             <div className="contact__info">
                 <h3 className="contact__title">
                     ОБСУДИМ ДЕТАЛИ?

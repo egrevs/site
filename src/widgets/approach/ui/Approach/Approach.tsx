@@ -21,7 +21,7 @@ export const Approach = () => {
     ];
 
     return (
-        <section className="approach">
+        <section className="approach" id="approach">
             <hr className="approach__divider"/>
             <h2 className="approach__title">
                 Для меня важен грамотный и системный подход

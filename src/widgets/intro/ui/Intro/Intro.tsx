@@ -8,7 +8,7 @@ export const Intro = () => {
     ];
 
     return (
-        <section className="intro">
+        <section className="intro" id="intro">
             <img className="intro__image" src='/assets/images/photo_2025-03-03_13-32-51.png' alt="Фото дизайнера"/>
             <div className="intro__content">
                 <h1 className="intro__title">Дизайн интерьеров</h1>
