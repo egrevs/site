@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Noto Serif";
+    src: local("Noto Serif"),
+    url('../../../public/fonts/NotoSerif-VariableFont_wdth_wght.woff') format("woff");
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    justify-content: center;
+    font-family: 'Noto Serif', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.portfolio {
+    padding: 40px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .portfolio {
+        padding: 30px 40px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 20px 20px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .portfolio {
+        padding: 15px 15px;
+    }
+}
+
+/* Global box-sizing rule */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
