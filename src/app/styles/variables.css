@@ -28,24 +28,30 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark mode colors - you can customize these */
-    --color-primary: #ffffff;
-    --color-secondary: #cccccc;
-    --color-accent: #aaaaaa;
-    
-    --color-bg-primary: #242424;
-    --color-bg-secondary: #333333;
-    --color-bg-accent: rgba(36, 36, 36, 0.9);
-    
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #cccccc;
-    --color-text-light: #aaaaaa;
-    
-    --color-button-bg: rgba(255, 255, 255, 0.3);
-    --color-button-bg-hover: rgba(255, 255, 255, 0.5);
-    --color-button-text: #000000;
-    
-    --color-border: #ffffff;
-    --color-divider: #ffffff;
+    /* Primary colors */
+    --color-primary: #000000;
+    --color-secondary: #666666;
+    --color-accent: #888888;
+
+    /* Background colors */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f9f9f9;
+    --color-bg-accent: rgba(255, 255, 255, 0.9);
+
+    /* Text colors */
+    --color-text-primary: #000000;
+    --color-text-secondary: #666666;
+    --color-text-light: #888888;
+
+    /* Button colors */
+    --color-button-bg: rgba(0, 0, 0, 0.5);
+    --color-button-bg-hover: rgba(0, 0, 0, 0.8);
+    --color-button-text: #ffffff;
+
+    /* Border colors */
+    --color-border: #000000;
+
+    /* Divider color */
+    --color-divider: #000000;
   }
 }

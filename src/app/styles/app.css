@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Noto Serif";
     src: local("Noto Serif"),
-    url('../../../public/fonts/NotoSerif-VariableFont_wdth_wght.woff') format("woff");
+    url('public/fonts/NotoSerif-VariableFont_wdth_wght.woff') format("woff");
     font-weight: normal;
 }
 
