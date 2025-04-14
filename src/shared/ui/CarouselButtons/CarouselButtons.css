@@ -31,6 +31,11 @@
   text-align: center;
   position: relative;
   padding-bottom: 7px;
+  outline: none; /* Remove default outline */
+}
+
+.carousel-buttons__item:focus {
+  outline: none; /* Remove outline on focus */
 }
 
 .carousel-buttons__item:hover {
