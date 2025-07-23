@@ -14,7 +14,7 @@ export const Header = () => {
                 <li className="header__nav-item" onClick={() => scrollToSection('intro')}>
                     Главная
                 </li>
-                <li className="header__nav-item" onClick={() => scrollToSection('approach')}>
+                <li className="header__nav-item" onClick={() => scrollToSection('aboutme')}>
                     Обо мне
                 </li>
                 <li className="header__nav-item" onClick={() => scrollToSection('portfolio')}>

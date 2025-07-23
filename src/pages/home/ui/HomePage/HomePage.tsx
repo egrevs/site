@@ -4,6 +4,7 @@ import { Approach } from "../../../../widgets/approach/ui/Approach/Approach";
 import { Portfolio } from "../../../../widgets/portfolio/ui/Portfolio/Portfolio";
 import { Contact } from "../../../../widgets/contact/ui/Contact/Contact";
 import { Footer } from "../../../../widgets/footer/ui/Footer/Footer";
+import { AboutMe } from '../../../../widgets/about/ui/AboutMe/AboutMe';
 
 export const HomePage = () => {
     return (
@@ -11,6 +12,7 @@ export const HomePage = () => {
             <Header />
             <main className="page__content">
                 <Intro />
+                <AboutMe />
                 <Approach />
                 <Portfolio />
                 <Contact />

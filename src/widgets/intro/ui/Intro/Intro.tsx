@@ -1,26 +1,51 @@
+import React, { useEffect, useState } from 'react';
 import '../../../../app/styles/intro.css';
 
-export const Intro = () => {
-    const paragraphs = [
-        'Я — мастер спорта России по художественной гимнастике. В 2021 году я завершила обучение в Российском экономическом университете имени Г.В. Плеханова на факультете экономики и права. В настоящее время работаю в сфере коммуникаций между бизнесом и властью, где приобрела ценный опыт взаимодействия с различными заинтересованными сторонами.',
-        'Однако со временем я осознала, что моя настоящая страсть заключается в дизайне интерьеров. Этот интерес пробудился во время ремонта в моей квартире, когда я поняла, как важно создавать комфортные и эстетически привлекательные пространства для жизни людей. Желание реализовать свои идеи и решения в области дизайна стало для меня приоритетом.',
-        'Для дальнейшего развития своих навыков я решила обучиться в Московской школе дизайна (МШД), что стало отличным стартом моего путешествия в мир дизайна. Я уверена, что полученные знания и опыт позволяют мне создавать уникальные и функциональные интерьеры, которые не только радуют глаз, но и делают жизнь людей более комфортной и гармоничной.'
-    ];
+const images = [
+  '/resume/mainPagePics/IMG_4221 (2).JPG',
+  '/resume/mainPagePics/IMG_1817.PNG',
+  '/resume/mainPagePics/IMG_1819.PNG',
+  '/resume/mainPagePics/IMG_1834.PNG',
+  '/resume/mainPagePics/IMG_4224.JPG',
+];
 
-    return (
-        <section className="intro" id="intro">
-            <img className="intro__image" src='./assets/images/photo_2025-03-03_13-32-51.png' alt="Фото дизайнера"/>
-            <div className="intro__content">
-                <h1 className="intro__title">Дизайн интерьеров</h1>
-                <hr className="intro__divider"/>
-                <p className="intro__slogan">Мои проекты - это внешнее отражение вашего внутреннего мира</p>
-                
-                {paragraphs.map((paragraph, index) => (
-                    <p key={index} className="intro__text">
-                        {paragraph}
-                    </p>
-                ))}
-            </div>
-        </section>
-    );
-};
+export const Intro = () => {
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState(0);
+  const [direction, setDirection] = useState(-1); // -1 = right to left
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrev(current);
+      setCurrent((prevIdx) => (prevIdx - 1 + images.length) % images.length);
+      setDirection(-1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [current]);
+
+  return (
+    <section className="intro-hero" id="intro">
+      {images.map((img, idx) => {
+        let className = 'intro-hero__bg';
+        if (idx === current) className += ' active slide-in-right';
+        else if (idx === prev) className += ' slide-out-left';
+        return (
+          <div
+            key={img}
+            className={className}
+            style={{ backgroundImage: `url('${img}')` }}
+          />
+        );
+      })}
+      <div className="intro-hero__overlay" />
+      <div className="intro-hero__center">
+        <h1 className="intro-hero__brand">ONA</h1>
+        <div className="intro-hero__subtitle">Interior Design</div>
+        <div className="intro-hero__phrase">
+          Мы здесь для того, чтобы вам всегда хотелось возвращаться домой, <br />
+          потому что каждая деталь в нем — о Вас и для Вас.
+        </div>
+      </div>
+    </section>
+  );
+}
