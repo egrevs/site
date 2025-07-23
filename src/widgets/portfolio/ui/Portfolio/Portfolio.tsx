@@ -30,6 +30,9 @@ export const Portfolio = () => {
 
     return (
         <section className="portfolio" id="portfolio">
+            <hr className="portfolio__divider" />
+            <h2 className="portfolio__title">Мои проекты</h2>
+            <hr className="portfolio__divider" />
             <ProjectCarousel images={projectSet1} />
             <ProjectCarousel images={projectSet2} />
             <ProjectCarousel images={projectSet3} />

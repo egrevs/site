@@ -24,7 +24,7 @@ export const Approach = () => {
         <section className="approach" id="approach">
             <hr className="approach__divider"/>
             <h2 className="approach__title">
-                Для меня важен грамотный и системный подход
+                Для нас важен грамотный и системный подход
             </h2>
             <hr className="approach__divider"/>
             <div className="approach__list">

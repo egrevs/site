@@ -12,8 +12,8 @@ export const HomePage = () => {
             <Header />
             <main className="page__content">
                 <Intro />
-                <AboutMe />
                 <Approach />
+                <AboutMe />
                 <Portfolio />
                 <Contact />
             </main>
