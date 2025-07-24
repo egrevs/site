@@ -1,34 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const projects = [
   {
     id: 1,
-    title: 'Проект 1',
-    mainImage: './assets/01.jpg',
-    description: 'Краткое описание проекта 1. Здесь можно рассказать о стиле, площади, особенностях и т.д.',
+    title: 'RiverSky',
+    mainImage: '/resume/pravki/firstProject/IMG_4224.JPG',
+    description: 'ЖК «RiverSky» 96.5 м²',
     images: [
-      './assets/01.jpg', './assets/01 (2).jpg', './assets/01 (3).jpg',
-      './assets/01 (4).jpg', './assets/01 (5).jpg', './assets/01 (6).jpg',
+      '/resume/pravki/firstProject/IMG_4224.JPG',
+      '/resume/pravki/firstProject/IMG_4223.JPG',
+      '/resume/pravki/firstProject/IMG_4222.JPG',
+      '/resume/pravki/firstProject/IMG_4221.JPG',
+      '/resume/pravki/firstProject/IMG_4220.JPG',
+      '/resume/pravki/firstProject/IMG_4219.JPG',
+      '/resume/pravki/firstProject/IMG_4217.JPG',
+      '/resume/pravki/firstProject/IMG_4216.JPG',
+      '/resume/pravki/firstProject/IMG_4215.JPG',
+      '/resume/pravki/firstProject/IMG_4214.JPG',
+      '/resume/pravki/firstProject/IMG_4213.JPG',
+      '/resume/pravki/firstProject/IMG_4212.JPG',
+      '/resume/pravki/firstProject/IMG_4209.JPG',
+      '/resume/pravki/firstProject/IMG_4208.JPG',
+      '/resume/pravki/firstProject/IMG_4205.JPG',
+      '/resume/pravki/firstProject/IMG_4203.JPG',
+      '/resume/pravki/firstProject/IMG_4202.JPG',
+      '/resume/pravki/firstProject/IMG_4201.JPG',
     ],
   },
   {
     id: 2,
-    title: 'Проект 2',
-    mainImage: './assets/02.jpg',
-    description: 'Краткое описание проекта 2. Здесь можно рассказать о стиле, площади, особенностях и т.д.',
+    title: 'Full House',
+    mainImage: '/resume/pravki/secondProject/IMG_4231.JPG',
+    description: 'ЖК «Full House» 75 м²',
     images: [
-      './assets/02.jpg', './assets/02 (2).jpg', './assets/02 (3).jpg',
-      './assets/02 (4).jpg', './assets/02 (5).jpg', './assets/02 (6).jpg',
+      '/resume/pravki/secondProject/IMG_4231.JPG',
+      '/resume/pravki/secondProject/IMG_4232.JPG',
+      '/resume/pravki/secondProject/IMG_4235.JPG',
+      '/resume/pravki/secondProject/IMG_4238.JPG',
+      '/resume/pravki/secondProject/IMG_4241.JPG',
+      '/resume/pravki/secondProject/IMG_4243.JPG',
+      '/resume/pravki/secondProject/IMG_4245.JPG',
+      '/resume/pravki/secondProject/IMG_4246.JPG',
+      '/resume/pravki/secondProject/IMG_4247.JPG',
     ],
   },
   {
     id: 3,
-    title: 'Проект 3',
-    mainImage: './assets/03.jpg',
-    description: 'Краткое описание проекта 3. Здесь можно рассказать о стиле, площади, особенностях и т.д.',
+    title: 'Остров',
+    mainImage: '/resume/pravki/thirdProject/IMG_1834.PNG',
+    description: 'ЖК «Остров» 66 м²',
     images: [
-      './assets/03.jpg', './assets/03 (2).jpg', './assets/03 (3).jpg',
-      './assets/03 (4).jpg', './assets/03 (5).jpg', './assets/03 (6).jpg',
+      '/resume/pravki/thirdProject/IMG_1834.PNG',
+      '/resume/pravki/thirdProject/IMG_1835.PNG',
+      '/resume/pravki/thirdProject/IMG_1836.PNG',
+      '/resume/pravki/thirdProject/IMG_1839.PNG',
+      '/resume/pravki/thirdProject/IMG_1831.PNG',
+      '/resume/pravki/thirdProject/IMG_1830.PNG',
+      '/resume/pravki/thirdProject/IMG_1829.PNG',
+      '/resume/pravki/thirdProject/IMG_1828.PNG',
+      '/resume/pravki/thirdProject/IMG_1826.PNG',
+      '/resume/pravki/thirdProject/IMG_1824.PNG',
+      '/resume/pravki/thirdProject/IMG_1823.PNG',
+      '/resume/pravki/thirdProject/IMG_1822.PNG',
+      '/resume/pravki/thirdProject/IMG_1815.PNG',
+      '/resume/pravki/thirdProject/IMG_1816.PNG',
+      '/resume/pravki/thirdProject/IMG_1817.PNG',
+      '/resume/pravki/thirdProject/IMG_1818.PNG',
+      '/resume/pravki/thirdProject/IMG_1819.PNG',
     ],
   },
 ];
@@ -36,9 +74,31 @@ const projects = [
 export const Portfolio = () => {
   const [openId, setOpenId] = useState<number|null>(null);
   const [fullscreenImg, setFullscreenImg] = useState<string|null>(null);
+  const [fullscreenIdx, setFullscreenIdx] = useState<number>(0);
   const openModal = (id: number) => setOpenId(id);
-  const closeModal = () => { setOpenId(null); setFullscreenImg(null); };
+  const closeModal = () => { setOpenId(null); setFullscreenImg(null); setFullscreenIdx(0); };
   const current = projects.find(p => p.id === openId);
+
+  // Открыть фото по индексу
+  const openFullscreenByIdx = (idx: number) => {
+    if (!current) return;
+    const images = current.images;
+    const newIdx = (idx + images.length) % images.length;
+    setFullscreenImg(images[newIdx]);
+    setFullscreenIdx(newIdx);
+  };
+
+  // Обработка клавиш
+  useEffect(() => {
+    if (!fullscreenImg) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') openFullscreenByIdx(fullscreenIdx - 1);
+      if (e.key === 'ArrowRight') openFullscreenByIdx(fullscreenIdx + 1);
+      if (e.key === 'Escape') setFullscreenImg(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [fullscreenImg, fullscreenIdx, current]);
 
   return (
     <section className="portfolio" id="portfolio">
@@ -68,7 +128,7 @@ export const Portfolio = () => {
                   src={img}
                   alt={current.title + ' ' + (idx+1)}
                   className="portfolio__modal-img"
-                  onClick={() => setFullscreenImg(img)}
+                  onClick={() => { setFullscreenImg(img); setFullscreenIdx(idx); }}
                   style={{ cursor: 'zoom-in' }}
                 />
               ))}
@@ -76,10 +136,12 @@ export const Portfolio = () => {
           </div>
         </div>
       )}
-      {fullscreenImg && (
+      {fullscreenImg && current && (
         <div className="portfolio__fullscreen" onClick={() => setFullscreenImg(null)}>
+          <button className="portfolio__fullscreen-arrow portfolio__fullscreen-arrow--left" onClick={e => { e.stopPropagation(); openFullscreenByIdx(fullscreenIdx - 1); }}>&#8592;</button>
           <img src={fullscreenImg} alt="Фотография проекта" className="portfolio__fullscreen-img" />
-          <button className="portfolio__fullscreen-close" onClick={() => setFullscreenImg(null)}>×</button>
+          <button className="portfolio__fullscreen-arrow portfolio__fullscreen-arrow--right" onClick={e => { e.stopPropagation(); openFullscreenByIdx(fullscreenIdx + 1); }}>&#8594;</button>
+          <button className="portfolio__fullscreen-close" onClick={e => { e.stopPropagation(); setFullscreenImg(null); }}>×</button>
         </div>
       )}
     </section>

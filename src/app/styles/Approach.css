@@ -346,3 +346,40 @@
     font-size: 2.2rem;
   }
 }
+
+.portfolio__fullscreen-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2.8rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 3010;
+  padding: 0 18px;
+  border-radius: 50%;
+  transition: color 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.portfolio__fullscreen-arrow--left {
+  left: 32px;
+}
+.portfolio__fullscreen-arrow--right {
+  right: 32px;
+}
+.portfolio__fullscreen-arrow:hover {
+  color: #bbb;
+}
+@media (max-width: 900px) {
+  .portfolio__fullscreen-arrow--left {
+    left: 8px;
+  }
+  .portfolio__fullscreen-arrow--right {
+    right: 8px;
+  }
+  .portfolio__fullscreen-arrow {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+}
