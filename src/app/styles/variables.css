@@ -1,30 +1,41 @@
 :root {
   /* Primary colors */
-  --color-primary: #000000;
-  --color-secondary: #666666;
-  --color-accent: #888888;
+  --color-primary: var(--color-ncs-s1515-r10b); /* акцент */
+  --color-secondary: var(--color-ncs-s7502-g); /* вторичный текст */
+  --color-accent: var(--color-ncs-s1515-r10b); /* акцент */
   
   /* Background colors */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f9f9f9;
-  --color-bg-accent: rgba(255, 255, 255, 0.9);
-  --color-input-bg: #ffffff;
+  --color-bg-primary: var(--color-ncs-s0601-b); /* основной фон */
+  --color-bg-secondary: var(--color-ncs-s1002-r50b); /* вторичный фон */
+  --color-bg-accent: var(--color-ncs-s1002-r50b);
+  --color-input-bg: var(--color-ncs-s0601-b);
   
   /* Text colors */
-  --color-text-primary: #000000;
-  --color-text-secondary: #666666;
-  --color-text-light: #888888;
+  --color-text-primary: var(--color-ncs-s8505-r); /* основной текст */
+  --color-text-secondary: var(--color-ncs-s7502-g);
+  --color-text-light: var(--color-ncs-s2502-b);
   
   /* Button colors */
-  --color-button-bg: rgba(0, 0, 0, 0.5);
-  --color-button-bg-hover: rgba(0, 0, 0, 0.8);
-  --color-button-text: #ffffff;
+  --color-button-bg: var(--color-ncs-s3010-r10b);
+  --color-button-bg-hover: var(--color-ncs-s3502-y20r);
+  --color-button-text: var(--color-ncs-s8505-r);
   
   /* Border colors */
-  --color-border: #000000;
+  --color-border: var(--color-ncs-s3502-y20r);
   
   /* Divider color */
-  --color-divider: #000000;
+  --color-divider: var(--color-ncs-s3502-y20r);
+
+  /* NCS фирменная палитра */
+  --color-ncs-s7502-g: #5B5B52;
+  --color-ncs-s1002-r50b: #EDEDED;
+  --color-ncs-s1515-r10b: #E3C9D2;
+  --color-ncs-s3010-r10b: #B89CA7;
+  --color-ncs-s3502-y20r: #A29B94;
+  --color-ncs-s2502-b: #BFC1C2;
+  --color-ncs-s0601-b: #F6F7F7;
+  --color-ncs-s8505-r: #2B2B2B;
+  --color-ncs-s2002-y: #CFC9B9;
 }
 
 @media (prefers-color-scheme: dark) {

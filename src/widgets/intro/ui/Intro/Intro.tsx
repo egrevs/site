@@ -23,7 +23,7 @@ export const Intro = () => {
     return () => clearInterval(interval);
   }, [current]);
 
-  return (
+    return (
     <section className="intro-hero" id="intro">
       {images.map((img, idx) => {
         let className = 'intro-hero__bg';
@@ -45,7 +45,7 @@ export const Intro = () => {
           Мы здесь для того, чтобы вам всегда хотелось возвращаться домой, <br />
           потому что каждая деталь в нем — о Вас и для Вас.
         </div>
-      </div>
-    </section>
-  );
+            </div>
+        </section>
+    );
 }

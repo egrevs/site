@@ -1,22 +1,81 @@
 .footer {
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
+  background: var(--color-ncs-s1002-r50b);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 36px 0 28px 0;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s cubic-bezier(.4,0,.2,1);
+}
+.footer.footer--visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-.footer__text {
-    margin-bottom: 10px;
+.footer--static {
+  position: relative !important;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+  margin-top: 80px;
+  margin-bottom: 0 !important;
+  padding: 44px 0 !important;
+  width: 100%;
+  background: var(--color-ncs-s1002-r50b);
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+  min-height: 0 !important;
+  height: auto !important;
+}
+.footer--static.footer--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.footer__link {
-    color: #666;
-    text-decoration: none;
-    margin-bottom: 5px;
-    transition: color 0.3s ease;
+.footer__contact-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.footer__link:hover {
-    color: #333;
+.footer__contact-title {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.footer__contact-phone,
+.footer__contact-email {
+  color: var(--color-text-secondary);
+  font-size: 1.08rem;
+}
+
+.footer__contact-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.footer__contact-link:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 1rem;
+    padding: 24px 0 18px 0;
+  }
+  .footer__contact-title {
+    font-size: 1.08rem;
+  }
 }
