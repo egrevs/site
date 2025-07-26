@@ -100,8 +100,8 @@ export const Portfolio = () => {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [fullscreenImg, fullscreenIdx, current]);
 
-  return (
-    <section className="portfolio" id="portfolio">
+    return (
+        <section className="portfolio" id="portfolio">
       <div className="portfolio__header-group">
         <hr className="portfolio__divider" />
         <h2 className="portfolio__title">Мои проекты</h2>
@@ -144,6 +144,6 @@ export const Portfolio = () => {
           <button className="portfolio__fullscreen-close" onClick={e => { e.stopPropagation(); setFullscreenImg(null); }}>×</button>
         </div>
       )}
-    </section>
-  );
+        </section>
+    );
 };
