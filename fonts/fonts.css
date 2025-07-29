@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Noto Serif";
+    src: local("Noto Serif"),
+    local("LexendPeta-Regular"),
+    url("NotoSerif-Italic-VariableFont_wdth_wght.woff") format("woff");
+    font-weight: normal;
+}
