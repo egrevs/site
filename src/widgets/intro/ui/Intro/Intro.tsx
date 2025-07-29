@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import '../../../../app/styles/intro.css';
 
 const images = [
-  '/resume/mainPagePics/IMG_4221 (2).JPG',
-  '/resume/mainPagePics/IMG_1817.PNG',
-  '/resume/mainPagePics/IMG_1819.PNG',
-  '/resume/mainPagePics/IMG_1834.PNG',
-  '/resume/mainPagePics/IMG_4224.JPG',
+  '/site/assets/mainPagePics/IMG_4221 (2).JPG',
+  '/site/assets/mainPagePics/IMG_1817.PNG',
+  '/site/assets/mainPagePics/IMG_1819.PNG',
+  '/site/assets/mainPagePics/IMG_1834.PNG',
+  '/site/assets/mainPagePics/IMG_4224.JPG',
 ];
 
 export const Intro = () => {

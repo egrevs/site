@@ -1,4 +1,5 @@
 import './AboutMe.css';
+import photoImage from '/assets/images/photo_2025-03-03_13-32-51.png';
 
 export const AboutMe = () => {
   return (
@@ -6,8 +7,9 @@ export const AboutMe = () => {
       <div className="aboutme__image-wrap">
         <img
           className="aboutme__image"
-          src="/resume/assets/images/photo_2025-03-03_13-32-51.png"
+          src={photoImage}
           alt="Фото дизайнера"
+          loading="lazy"
         />
       </div>
       <div className="aboutme__content">
